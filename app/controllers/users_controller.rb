@@ -1,38 +1,60 @@
 class UsersController < ApplicationController
+
+  before_action :load_user, except: [:index, :new, :create]
+
+  before_action :authorize_user, except: [:index, :new, :create, :show]
+
   def index
-    @users = [
-      User.new(
-        id: 1,
-        name: 'Vadim',
-        username: 'installero',
-        avatar_url: 'https://s00.yaplakal.com/pics/pics_original/4/6/4/10101464.jpg'
-      ),
-      User.new(
-        id: 2,
-        name: 'Misha',
-        username: 'aristofun'
-      )   
-    ]
+    @users = User.all
   end
 
   def new
+    redirect_to root_url, alert: 'Вы уже залогинены' if current_user.present?
+    @user = User.new
   end
 
   def edit
+
+  end
+
+  def create
+    @user = User.new(user_params)
+
+    if @user.save
+      redirect_to root_url, notice: 'Пользователь успешно зарегистрирован!'
+    else
+      render 'new'
+
+    end
+
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: 'Данные обновлены!'
+    else
+      render 'edit'
+
+    end
   end
 
   def show
-    @user = User.new(
-                    name: 'Vadim',
-                    username: 'installero',
-                    avatar_url: 'https://s00.yaplakal.com/pics/pics_original/4/6/4/10101464.jpg'
-    )
+    @questions = @user.questions.order(created_at: :desc)
 
-    @questions = [
-      Question.new(text: 'How are you?', created_at: Date.parse('27.03.2016')),
-      Question.new(text: 'How are you?', created_at: Date.parse('27.03.2016'))
-    ]
+    @new_question = @user.questions.build
+  end
 
-    @new_question = Question.new
+  private
+
+  def authorize_user
+    reject_user unless @user == current_user    
+  end
+
+  def load_user
+    @user ||= User.find params[:id]
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_cofirmation, :name, :username, :avatar_url)
   end
 end
