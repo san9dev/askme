@@ -1,17 +1,37 @@
+<%# Это фрагмет (паршал, partial) для вывода вопроса. В нем определена %>
+<%# локальная переменная question, в которую при вызове будет передан %>
+<%# как в метод ruby объект после ключа (object: @question) %>
+
+<% question ||= nil %>
+<% action_icon = question.answer.blank? ? 'reply' : 'edit' %>
+
+
 <div class="question">
-	<div class="question-content">
+  <div class="question-content">
+
     <div class="question-text text-lead">
       <%= question.text %>
     </div>
 
-    <% if question.answer.present? %>    
-  		<div class="question-text text-lead">
-  		  <%= question.answer if question.answer.present? %>
+    <% if question.answer.present? %>
+      <div class="question-answer text-lead">
+        <%= question.answer %>
       </div>
-		<% end %>
+    <% end %>
 
-		<div class="question-date">
-      <%= question.created_at.strftime('%d %m %M:%H') %>  
+    <div class="question-date">
+      <%= l(question.created_at, format: :short) %>
     </div>
-	</div>
+  </div>
+
+  <% if question.user == current_user %>
+
+    <%# edit_icon = question.answer.blank? ? 'reply' : 'edit' %>
+
+    <div class="question-actions">
+      <%= link_to fa_icon(action_icon), edit_question_path(question) %>
+      <%= link_to fa_icon('trash-alt'), question_path(question),
+                  method: :delete, data: {confirm: 'Точно удалить вопрос?'} %>
+    </div>
+  <% end %>
 </div>
