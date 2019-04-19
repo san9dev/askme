@@ -5,9 +5,10 @@
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div class="form-errors">
+          <h2><%= @user.errors.count %> ошибка:</h2>
           <ul>
-            <% for message in @user.errors.full_messages %>
-              <li class="form-error-message"><%= message %></li>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
             <% end %>
           </ul>
         </div>

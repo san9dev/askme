@@ -41,3 +41,15 @@
 .question-actions a {
   margin-left: 10px;
 }
+
+.question-info-wrapper {
+    display: flex;
+    margin-top: 10px;
+    background: #ffffff;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.question-info-item {
+}
+
