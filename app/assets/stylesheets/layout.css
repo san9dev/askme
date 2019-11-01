@@ -11,7 +11,7 @@ a {
   background: white;
   overflow: hidden;
   vertical-align: baseline;
-  padding: 10px 40px;
+  padding: 10px 150px;
 }
 
 .header-nav {
@@ -34,6 +34,8 @@ a {
 }
 
 .content-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
   background: #fff;
   padding: 10px;
 }
