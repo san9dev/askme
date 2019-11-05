@@ -7,9 +7,11 @@ module ApplicationHelper
     end
   end
 
-
-
   def fa_icon(icon_class)
     content_tag 'span', '', class: "fa fa-#{icon_class}"
+  end
+
+  def question_pluralize(count, text)
+    pluralize(count, text)
   end
 end
