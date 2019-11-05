@@ -16,13 +16,9 @@ gem 'jqcloud-rails'
 
 gem 'rails-i18n'
 gem 'bootsnap', '>= 1.1.0', require: false
-
-group :production do
- gem 'pg'
-end
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
