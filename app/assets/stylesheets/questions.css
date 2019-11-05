@@ -5,6 +5,7 @@
 
 .question {
   background: white;
+  border-radius: 4px;
 }
 
 .question-content {
@@ -43,12 +44,14 @@
   margin-left: 10px;
 }
 
-.question-info-wrapper {
-    display: flex;
-    margin-top: 10px;
-    background: #ffffff;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.wrap-question-counter {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: #779988;
+  color: #f6f5ed;
 }
 
 .question-info-item {

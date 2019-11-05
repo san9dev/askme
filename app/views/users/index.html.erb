@@ -5,10 +5,11 @@
   </div>
 
   <div class="buffer-both">
-    <h2 style="color: white">Добро вожаловать в Хорошие вопросы</h2>
-    <h3 style="color: white">Здесь задают вопросы и необязательно получают ответы</h3>
-    <br><br>
-    <h1 class="title-medium" style="color: white">Наши пользователи</h1>
+    <h2>Добро вожаловать в Хорошие вопросы</h2>
+    <h3>Здесь задают вопросы и необязательно получают ответы</h3>
+    <br>
+    <br>
+    <h1 class="title-medium">Наши пользователи</h1>
   </div>
 
   <%# Этот код выводит каждого пользователя в цикле %>
@@ -17,7 +18,7 @@
       <div class="user-image-div user-image-div-small">
         <%= link_to image_tag(user_avatar(user), class: 'user-image'), user_path(user) %>
       </div>
-      <div style="color: white">
+      <div>
         <%= user.username %>
       </div> 
     </div>

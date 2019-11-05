@@ -18,9 +18,23 @@
 
     @<%= @user.username %>
   </h2>
+  
 
   <div class="user-ask-button container text-center">
     <%= link_to "Спроси меня", '', class: 'button button-light', id: 'ask-button' %>
+  </div>
+</div>
+
+<div class="wrap-question-counter">
+  <div class="counter">
+    <%=  %>
+    <%= question_pluralize(@questions_count, 'question') %>
+  </div>
+  <div class="counter">
+    <%= question_pluralize(@answers_count, 'answer') %>
+  </div>
+  <div class="counter">
+    <%= question_pluralize(@unanswered_count, 'unanswered') %>
   </div>
 </div>
 

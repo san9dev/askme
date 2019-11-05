@@ -10,8 +10,10 @@
 }
 
 .button-dark {
-  background: #2e2f41;
+  background: #779988;
   color: #fff;
+  width: 100%;
+  cursor: pointer;
 }
 
 .button-green {

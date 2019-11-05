@@ -55,13 +55,14 @@
 }
 
 .user-questions {
-  background: #D9E6E5;
 }
 
 .user-question-form {
   padding: 10px;
   margin-left: 10px;
-  background: #D9E6E5;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #d3d9de;
 }
 
 @media (max-width: 960px) {

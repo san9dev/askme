@@ -9,6 +9,7 @@
 .form-label {
   display: block;
   margin-bottom: 5px;
+  color: #A0A0A0;
 }
 
 .form-textarea {
@@ -20,7 +21,7 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  border: 1px solid #00b6ad;
+  border:1px solid #d3d9de;
   padding: 7.5px 10px;
   border-radius: 3px;
   font-size: 16px;
