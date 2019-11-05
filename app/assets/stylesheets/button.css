@@ -9,8 +9,12 @@
   border: none;
 }
 
+.button-margin-left {
+  margin-left: 20px;
+}
+
 .button-dark {
-  background: #779988;
+  background: #005a55;
   color: #fff;
   width: 100%;
   cursor: pointer;
