@@ -31,3 +31,6 @@
 /config/master.key
 .idea
 q
+
+config/database.yml
+config/secrets.yml
