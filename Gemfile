@@ -14,6 +14,7 @@ gem 'jquery-ui-rails'
 gem 'slim-rails'
 gem 'jqcloud-rails'
 
+gem 'rails-i18n'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do
